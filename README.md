@@ -21,45 +21,45 @@ To get started with the NTP Client Requester, clone the repository and install t
 ```bash
 git clone https://github.com/valorisa/ntp-client-requester.git
 cd ntp-client-requester
-
-2. Install dependencies
-
+```
+### 2. Install dependencies
+```bash
 npm install
-
-3. Build the project
-
+```
+### 3. Build the project
+```bash
 npm run build
-
-4. Run the client
-
+```
+### 4. Run the client
+```bash
 npm start
-
-Docker Installation
+```
+### Docker Installation
 
 Alternatively, you can run the project in a Docker container for an isolated environment.
 
-1. Build the Docker image
-
+### 1. Build the Docker image
+```bash
 docker build -f Dockerfile.alpine -t ntp-client .
-
-2. Run the Docker container
-
+```
+### 2. Run the Docker container
+```bash
 docker run --rm ntp-client
-
-Usage
+```
+### Usage
 
 Once the client is running, it will fetch the time from the specified NTP server and adjust the system clock with minimal latency.
 
 To use custom parameters (like NTP server or mode), modify the ntp-client.ts file or extend the project with additional CLI arguments.
 
-Configuration
+### Configuration
 
 Default NTP server: pool.ntp.org
 
 Supported Protocols: NTPv4 (RFC 5905), optional NTS (RFC 8915)
 
 
-Performance Metrics
+### Performance Metrics
 
 The following metrics are calculated:
 
@@ -74,16 +74,16 @@ Stratum level
 Reference ID
 
 
-Contributing
+### Contributing
 
 Feel free to submit issues, pull requests, or any suggestions to improve the project.
 
 
-License
+### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgements
+### Acknowledgements
 
 Node.js for the runtime.
 
