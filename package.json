@@ -1,0 +1,17 @@
+{
+  "name": "ntp-client-requester",
+  "version": "1.0.0",
+  "description": "A high-precision NTP client implementation in TypeScript, designed for Alpine Linux environments, fully compliant with RFC 5905. Optimized for lightweight Docker containers with security features and real-time clock synchronization.",
+  "main": "dist/ntp-client.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/ntp-client.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "author": "valorisa",
+  "license": "MIT"
+}

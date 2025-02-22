@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+# Set timezone
+RUN apk add --no-cache tzdata
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install --production
+
+# Copy the source code
+COPY . .
+
+# Build TypeScript
+RUN npm run build
+
+# Start the application
+CMD ["node", "./dist/ntp-client.js"]
