@@ -46,20 +46,20 @@ docker build -f Dockerfile.alpine -t ntp-client .
 ```bash
 docker run --rm ntp-client
 ```
-Usage
+### Usage
 
 Once the client is running, it will fetch the time from the specified NTP server and adjust the system clock with minimal latency.
 
 To use custom parameters (like NTP server or mode), modify the ntp-client.ts file or extend the project with additional CLI arguments.
 
-Configuration
+### Configuration
 
 Default NTP server: pool.ntp.org
 
 Supported Protocols: NTPv4 (RFC 5905), optional NTS (RFC 8915)
 
 
-Performance Metrics
+### Performance Metrics
 
 The following metrics are calculated:
 
@@ -74,16 +74,16 @@ Stratum level
 Reference ID
 
 
-Contributing
+### Contributing
 
 Feel free to submit issues, pull requests, or any suggestions to improve the project.
 
 
-License
+### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgements
+### Acknowledgements
 
 Node.js for the runtime.
 
