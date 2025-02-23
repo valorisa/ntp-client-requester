@@ -113,15 +113,15 @@ Supported Protocols: NTPv4 (RFC 5905), optional NTS (RFC 8915)
 
 The following metrics are calculated:
 
-Round-trip delay
+- **Round-trip delay**
 
-Clock offset
+- **Clock offset**
 
-Clock dispersion
+- **Clock dispersion**
 
-Stratum level
+- **Stratum level**
 
-Reference ID
+- **Reference ID**
 
 
 ### Contributing
