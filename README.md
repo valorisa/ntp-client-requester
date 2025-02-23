@@ -46,6 +46,56 @@ docker build -f Dockerfile.alpine -t ntp-client .
 ```bash
 docker run --rm ntp-client
 ```
+### Structure
+Here is the project structure for ntp-client-requester after adding the necessary files:
+
+```bash
+ntp-client-requester/
+├── .git/
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── branches/
+│   ├── config/
+│   ├── description
+│   ├── hooks/
+│   ├── index
+│   ├── info/
+│   ├── logs/
+│   ├── objects/
+│   └── refs/
+├── Dockerfile.alpine
+├── Licence.md
+├── README.md
+├── dist/
+│   └── ntp-client.js
+├── package.json
+├── src/
+│   └── ntp-client.ts
+└── tsconfig.json
+```
+
+### Description of folders and files:
+
+.git/ : Hidden Git directory containing the repository configuration and objects.
+
+Dockerfile.alpine : File to build the Docker image based on Alpine Linux.
+
+Licence.md : Project license file.
+
+README.md : Project documentation with instructions and details.
+
+dist/ : Directory containing compiled files (e.g., ntp-client.js).
+
+package.json : Dependencies and configuration for the Node.js project.
+
+src/ : Source files directory (e.g., ntp-client.ts).
+
+tsconfig.json : TypeScript configuration for the project.
+
+
+This represents the complete structure of the project after setting up Git and adding the necessary files for GitHub.
+
+
 ### Usage
 
 Once the client is running, it will fetch the time from the specified NTP server and adjust the system clock with minimal latency.
