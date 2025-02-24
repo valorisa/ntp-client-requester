@@ -129,8 +129,9 @@ To run the unit tests, use the following command:
 
 ```sh
 npm test
-If you encounter issues with hanging processes after tests complete, you can diagnose open handles using:
 ```
+
+If you encounter issues with hanging processes after tests complete, you can diagnose open handles using:
 
 ```sh
 npm test -- --detectOpenHandles
