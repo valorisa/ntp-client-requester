@@ -123,6 +123,21 @@ The following metrics are calculated:
 
 - **Reference ID**
 
+### Tests
+
+To run the unit tests, use the following command:
+
+```sh
+npm test
+If you encounter issues with hanging processes after tests complete, you can diagnose open handles using:
+```
+
+```sh
+npm test -- --detectOpenHandles
+```
+
+This will help identify asynchronous operations that were not properly closed.
+
 
 ### Contributing
 
