@@ -1,0 +1,38 @@
+import { createSocket, Socket } from 'dgram'; // Importation des types nécessaires
+
+export class NTPClient {
+  private readonly ntpServer: string;
+  private socket: Socket;
+
+  constructor(server: string = 'pool.ntp.org') {
+    this.ntpServer = server;
+    this.socket = createSocket('udp4'); // Création du socket UDP
+  }
+
+  async getNetworkTime(): Promise<Date> {
+    return new Promise((resolve, reject) => {
+      const ntpData = Buffer.alloc(48); // Allocation du buffer NTP
+      ntpData[0] = 0x23; // LI=0, Version=4, Mode=3 (Client)
+
+      // Envoi de la requête NTP
+      this.socket.send(ntpData, 123, this.ntpServer, (err: Error | null) => {
+        if (err) reject(err); // Gestion des erreurs
+      });
+
+      // Réception de la réponse
+      this.socket.once('message', (msg: Buffer) => {
+        const offsetTransmitTime = 40; // L'offset pour le temps de transmission
+        const seconds = msg.readUInt32BE(offsetTransmitTime); // Extraction du temps
+        const ntpEpoch = Date.UTC(1900, 0, 1); // L'époque NTP commence en 1900
+        resolve(new Date(ntpEpoch + seconds * 1000)); // Retour du temps NTP converti en Date
+      });
+    });
+  }
+
+  /** Ferme le socket UDP pour éviter les processus ouverts */
+  close() {
+    if (this.socket) {
+      this.socket.close(); // Fermeture du socket
+    }
+  }
+}

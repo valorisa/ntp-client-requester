@@ -1,0 +1,12 @@
+# Ignorer le dossier node_modules
+node_modules/
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+*.backup
+
+# Ignorer les fichiers spécifiques à l'environnement
+.env
+
+# Ignorer les fichiers générés par les tests (coverage)
+coverage/

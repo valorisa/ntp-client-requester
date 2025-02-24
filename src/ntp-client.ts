@@ -1,6 +1,6 @@
 import { createSocket, Socket } from 'dgram';
 
-class NTPClient {
+export class NTPClient {
   private readonly ntpServer: string;
   private socket: Socket;
 
@@ -21,11 +21,21 @@ class NTPClient {
       this.socket.once('message', (msg) => {
         const offsetTransmitTime = 40;
         const seconds = msg.readUInt32BE(offsetTransmitTime);
-        const ntpEpoch = Date.UTC(1900, 0, 1);
-        resolve(new Date(ntpEpoch + seconds * 1000));
+        const ntpEpoch = Date.UTC(1900, 0, 1); // L'epoch NTP est le 1er janvier 1900
+        const networkTime = new Date(ntpEpoch + seconds * 1000);
+
+        // Affiche la date et l'heure dans un format lisible
+        console.log(`Date et heure NTP : ${networkTime.toLocaleString()}`);
+
+        resolve(networkTime);
       });
     });
   }
-}
 
-export default NTPClient;
+  /** Ferme le socket UDP pour éviter les processus ouverts */
+  close() {
+    if (this.socket) {
+      this.socket.close();
+    }
+  }
+}
