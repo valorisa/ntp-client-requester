@@ -16,5 +16,5 @@ COPY . .
 # Build TypeScript
 RUN npm run build
 
-# Start the application
-CMD ["node", "./dist/ntp-client.js"]
+# Run the tests and start the application if tests pass
+CMD ["sh", "-c", "npm test && node ./dist/ntp-client.js"]
