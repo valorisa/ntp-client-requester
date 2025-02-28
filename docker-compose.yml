@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  ntp-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    environment:
+      - TZ=UTC
+    command: ["sh", "-c", "npm test && node ./dist/ntp-client.js"]
