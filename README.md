@@ -18,35 +18,48 @@
 To get started with the NTP Client Requester, clone the repository and install the dependencies.
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/valorisa/ntp-client-requester.git
 cd ntp-client-requester
 ```
+
 ### 2. Install dependencies
+
 ```bash
 npm install
 ```
+
 ### 3. Build the project
+
 ```bash
 npm run build
 ```
+
 ### 4. Run the client
+
 ```bash
 npm start
 ```
+
 ### Docker Installation
 
 Alternatively, you can run the project in a Docker container for an isolated environment.
 
 ### 1. Build the Docker image
+
 ```bash
 docker build -f Dockerfile.alpine -t ntp-client .
 ```
+
 ### 2. Run the Docker container
+
 ```bash
 docker run --rm ntp-client
 ```
+
 ### Structure
+
 Here is the project structure for ntp-client-requester after adding the necessary files:
 
 ```bash
@@ -74,7 +87,7 @@ ntp-client-requester/
 └── tsconfig.json
 ```
 
-### Description of folders and files:
+### Description of folders and files
 
 **.git/** : Hidden Git directory containing the repository configuration and objects.
 
@@ -92,9 +105,7 @@ ntp-client-requester/
 
 **tsconfig.json** : TypeScript configuration for the project.
 
-
 This represents the complete structure of the project after setting up Git and adding the necessary files for GitHub.
-
 
 ### Usage
 
@@ -107,7 +118,6 @@ To use custom parameters (like NTP server or mode), modify the ntp-client.ts fil
 Default NTP server: pool.ntp.org
 
 Supported Protocols: NTPv4 (RFC 5905), optional NTS (RFC 8915)
-
 
 ### Performance Metrics
 
@@ -139,11 +149,9 @@ npm test -- --detectOpenHandles
 
 This will help identify asynchronous operations that were not properly closed.
 
-
 ### Contributing
 
 Feel free to submit issues, pull requests, or any suggestions to improve the project.
-
 
 ### License
 
